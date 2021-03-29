@@ -14,7 +14,6 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
 
 
 Participants : 
-
 - NZUMGUENG Samson
 - MORENA Lizanne
 - EITEL Rostand
@@ -22,7 +21,9 @@ Participants :
 - NZUTSEU Vaneck
 - LEUNGA Reinna
 
-creation & activation de l'environnement virtuel
-- python -m venv /env
+creation & activation de l'environnement virtuel :
+- python -m venv env
 - .\env\Scripts\activate
+
+
 
