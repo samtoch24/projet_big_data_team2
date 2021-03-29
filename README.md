@@ -1,6 +1,7 @@
-# projet_big_data_team2
+Projet_Big_data_Team2
+======================
 
-#Projet de big data
+## Projet de big data (Mars - Avril 2021)
 
 Sujet:
 Vous faites partie d'une équipe de campagne politique du parti de votre choix dans le pays de votre choix. 
@@ -12,7 +13,7 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
 
 
 
-# Participants : 
+## Participants : 
 - NZUMGUENG Samson
 - MORENA Lizanne
 - EITEL Rostand
@@ -20,7 +21,7 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
 - NZUTSEU Vaneck
 - LEUNGA Reinna
 
-# creation & activation de l'environnement virtuel :
+## creation & activation de l'environnement virtuel :
 - python -m venv env
 - .\env\Scripts\activate
 
