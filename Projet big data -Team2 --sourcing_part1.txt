@@ -1,0 +1,14 @@
+
+1.) Cette problématique, est-elle une problématique big data ?
+  	L’utilisation de la règle des 3V sur cette problématique se traduirait ainsi:
+		Volumétrie :  analyse d'une masse de données electorale ; analyse de la localisation/mouvements (faits et gestes) des des candidats
+		Variété : recueils des données à partir de plusieurs sources de données différentes comme l’actualité, les journaux, les réseaux sociaux, le positionnement des candidats, les mesures météo ou la nature ainsi que l'évolution des elections
+		Vélocité : evolution des données géographiques des candidats en temps réel (la position des candidats change en permanence), tendance des votes, evolution des campagnes electorales des candidats.
+
+	Sachant que le suivi electoral devra être mis à jour trés fréquement apès le vote de chaque electeur et que les candidats devront changer leur campagne electorale en fonction de la tendance des votes, on est bien sur une problématique Big Data qui vérifie la règle des 3V
+
+
+2.) Description des sources de données
+Les sources de données que l'on utilisera seront du domaine "publiques" (tiré de l'open Data). 
+Pour ce projet, nous regarderons les elections en "Angleterre" où nous appartenons au partie "Liberal Democrats" (libéraux-démocrates) et les partis adversaires étant : partie conservateur (Conservative Party), parti travailliste (Labour Party), Partie Unioniste democrate (Democratic Unionist Party)...
+
