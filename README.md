@@ -13,4 +13,4 @@ Participants :
 creation & activation de l'environnement virtuel
 - python -m venv /env
 - .\env\Scripts\activate
-- 
+
