@@ -12,7 +12,7 @@
 Les sources de données que l'on utilisera seront du domaine "publiques" (tiré de l'open Data). 
 Pour ce projet, nous regarderons les elections présidentielle de 2020 en "Etats Unis" où nous appartenons au partie republicains (Republican Party, présente des candidats à partir des élections de 1860) et le parti adversaire étant : Parti démocrate (Democratic Party, présente des candidats à partir des élections de 1830)
 Au elections présidentielle 2020, le candidat du parti republicain etait Donnald Trump et celui du parti democrate était Joe Biden.
-Les sources de données viendront de :
+Nos sources de données sont :
     la télévision
 	l'Open data gouvernemental
 	les réseaux sociaux
