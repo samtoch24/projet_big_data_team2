@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "This dataset contains data sources that will be used to handle the drug interactions problem."
+  description: "This dataset contains the data sources that will be used to get information about the movements of the other candidates such as their position, events, meetings and actions in real time."
   version: "0.0.1"
   title: "movements of other candidats"
   contact:
