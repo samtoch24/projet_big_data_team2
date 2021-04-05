@@ -2,9 +2,9 @@ swagger: "2.0"
 info:
   description: "This dataset contains data sources that will be used to handle the drug interactions problem."
   version: "0.0.1"
-  title: "Drug interactions dataset"
+  title: "movements of other candidats"
   contact:
-    email: "laurent@mooke.io"
+    email: "samtoche@outlook.fr"
 host: "drug-interactions.sourcing.com"
 basePath: "/v0.0.1"
 tags:
