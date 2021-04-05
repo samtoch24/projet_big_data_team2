@@ -5,11 +5,11 @@ info:
   title: "movements of other candidats"
   contact:
     email: "samtoche@outlook.fr"
-host: "drug-interactions.sourcing.com"
+host: "movements-candidats.sourcing.com"
 basePath: "/v0.0.1"
 tags:
 - name: "medicaments-gouv"
-  description: "The public french database for drugs"
+  description: "The public us database for..."
   externalDocs:
     description: "source"
     url: "http://base-donnees-publique.medicaments.gouv.fr"
