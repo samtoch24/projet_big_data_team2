@@ -28,9 +28,9 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
 
 
 ## API (Swagger)
- - Informations sur les mouvements des autres candidats tels que leur position, les evenements, les rencotres et leur faits et geste en temps réel
- - Tendance quatidienne des votes
- - popularité des candidats
+ - Informations sur les mouvements des autres candidats tels que leur position, les evenements, les rencotres et leur faits et geste en temps réel (vaneck)
+ - Tendance quatidienne des votes (lindsey ey eitel)
+ - popularité des candidats (morena et reinna)
 
 
 
