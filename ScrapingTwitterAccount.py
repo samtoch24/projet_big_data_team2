@@ -10,5 +10,5 @@ Elections2020_Account = urlopen(url)
 
 # Analyse de la page (Scraping)
 soup = BeautifulSoup(Elections2020_Account, features="lxml")
-s = soup.find("<html>")
+s = soup.find("elections")
 print(s)
