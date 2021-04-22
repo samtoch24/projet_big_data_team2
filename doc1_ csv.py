@@ -31,3 +31,4 @@ urlretrieve(link, destination_extracted_popularity_csv_path)
 info = os.stat(destination_extracted_popularity_csv_path)
 print("size (Mo): ", round(info.st_size/1000000, 3))
 print("last_update: ", datetime.fromtimestamp(info.st_ctime))
+
