@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "This API contains election data and movements such as the real time position of candidates, where they are meeting, daily voting trends, popularity of candidates on social networks and media in order to predict the political actions of other parties and carry out a successful political campaign."
+  description: "This API contains election data and movements such as the real time position of candidates, where they are meeting, voting trends, popularity of candidates on social networks and media in order to predict the political actions of other parties and carry out a successful political campaign."
   version: "1.0.0"
   title: "Data analysis and electoral movements"
   contact:
@@ -22,57 +22,36 @@ paths:
     get:
       tags:
       - "movements_candidats"
-      summary: "Add a new pet to the store"
+      summary: "Returns a Map with the position of all the candidat"
       description: ""
-      operationId: "addPet"
+      operationId: ""
       consumes:
       - "application/json"
       - "application/xml"
       produces:
       - "application/xml"
       - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Pet object that needs to be added to the store"
-        required: true
-        schema:
-          $ref: "#/definitions/Candidat"
       responses:
-        "405":
-          description: "Invalid input"
+        "200":
+          description: "successfull operation"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - meet_electoral_auth:
+        - "write:candidats"
+        - "read:candidats"
     
   /movements_candidats/events:
     get:
       tags:
       - "movements_candidats"
-      summary: "Finds Pets by status"
-      description: "Multiple status values can be provided with comma separated strings"
-      operationId: "findPetsByStatus"
+      summary: "Returns a events organized by the candidat"
+      description: ""
+      operationId: ""
       produces:
       - "application/xml"
       - "application/json"
-      parameters:
-      - name: "status"
-        in: "query"
-        description: "Status values that need to be considered for filter"
-        required: true
-        type: "array"
-        items:
-          type: "string"
-          enum:
-          - "available"
-          - "pending"
-          - "sold"
-          default: "available"
-        collectionFormat: "multi"
       responses:
         "200":
-          description: "successful operation"
+          description: "successfull operation"
           schema:
             type: "array"
             items:
@@ -80,31 +59,22 @@ paths:
         "400":
           description: "Invalid status value"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - meet_electoral_auth:
+        - "write:candidats"
+        - "read:candidats"
   /movements_candidats/meeting:
     get:
       tags:
       - "movements_candidats"
-      summary: "Finds Pets by tags"
-      description: "Muliple tags can be provided with comma separated strings. Use         tag1, tag2, tag3 for testing."
-      operationId: "findPetsByTags"
+      summary: "Returns a meeting organized by the candidat or the media (presse's conference)"
+      description: ""
+      operationId: ""
       produces:
       - "application/xml"
       - "application/json"
-      parameters:
-      - name: "tags"
-        in: "query"
-        description: "Tags to filter by"
-        required: true
-        type: "array"
-        items:
-          type: "string"
-        collectionFormat: "multi"
       responses:
         "200":
-          description: "successful operation"
+          description: "successfull operation"
           schema:
             type: "array"
             items:
@@ -112,24 +82,24 @@ paths:
         "400":
           description: "Invalid tag value"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - meet_electoral_auth:
+        - "write:candidats"
+        - "read:candidats"
       deprecated: false
 
   /tendancy_votes:
     get:
       tags:
       - "tendancy_votes"
-      summary: "Returns pet inventories by status"
-      description: "Returns a map of status codes to quantities"
+      summary: "Returns vote inventories for each candidat in map or in percentage of population"
+      description: "Returns a map of status votes trend"
       operationId: "getInventory"
       produces:
       - "application/json"
       parameters: []
       responses:
         "200":
-          description: "successful operation"
+          description: "successfull operation"
           schema:
             type: "object"
             additionalProperties:
@@ -142,9 +112,9 @@ paths:
     get:
       tags:
       - "popularity_candidats"
-      summary: "Create user"
-      description: "This can only be done by the logged in user."
-      operationId: "createUser"
+      summary: "Returns the media and the occurence of candidat on media/newspapers/TV. Returns also the favourite candidat for each TV channel"
+      description: "List of TV, media and newspapers with their favourite candidat. Circular diagram of each channel, media and newspapers with all the candidat (graphics reprsentaion)."
+      operationId: "Map"
       produces:
       - "application/xml"
       - "application/json"
@@ -157,14 +127,14 @@ paths:
           $ref: "#/definitions/Candidat"
       responses:
         default:
-          description: "successful operation"
+          description: "successfull operation"
   
   /popularity_candidats/on_social_network:
     get:
       tags:
       - "popularity_candidats"
-      summary: "Creates list of users with given input array"
-      description: ""
+      summary: "Returns the numbers of tweets/posts per day of a candidat on social network. Returns also the favourite candidat on this network and the followers'numbers"
+      description: "graphics reprsentaion in circular diagram"
       operationId: "createUsersWithListInput"
       produces:
       - "application/xml"
@@ -172,7 +142,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "List of user object"
+        description: "Created user object"
         required: true
         schema:
           type: "array"
@@ -180,16 +150,16 @@ paths:
             $ref: "#/definitions/Candidat"
       responses:
         default:
-          description: "successful operation"
+          description: "successfull operation"
 
 securityDefinitions:
-  petstore_auth:
+  meet_electoral_auth:
     type: "oauth2"
     authorizationUrl: "https://data-analysis-electoral-movements.sourcing.com"
     flow: "implicit"
     scopes:
-      write:pets: "modify pets in your account"
-      read:pets: "read your pets"
+      write:candidats: "modify our candidat's data in your account"
+      read:candidats: "read the other candidats"
   api_key:
     type: "apiKey"
     name: "api_key"
@@ -237,6 +207,12 @@ definitions:
       place:
         type: "object"
         description: "place of meeting"
+      type_M_or_E:
+        type: "string"
+        description: "Meeting or events"
+        enum:
+        - "Meeting"
+        - "Events"
      
     xml:
       name: "Meeting_events"

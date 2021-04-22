@@ -7,7 +7,6 @@ popularity_endpoint = Blueprint('popularity_endpoint', __name__)
 
 @popularity_endpoint.route("/csv_file/latest/download/")
 def popularity_csv_file_latest_download_get():
-
     popularity_latest_download()
     """ télécharge le dernier fichier des données de popularité des candidats """
 
