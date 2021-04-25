@@ -26,6 +26,10 @@ def vote_tendancy_latest_download():
     # Display downloaded file informations
     info = os.stat(destination_extracted_votes_csv_path)
 
-    return {render_template("<html><head><title>x</title></head><body><h3>path : ", destination_extracted_votes_csv_path, "size : ", round(info.st_size / 1000000, 3), "last_update : ", datetime.fromtimestamp(info.st_ctime).strftime('%Y - % m - % d % H: % M: % S'), "</h3></body></html>")}
+    #return {render_template("<html><head><title>x</title></head><body><h3>path : ", destination_extracted_votes_csv_path, "size : ", round(info.st_size / 1000000, 3), "last_update : ", datetime.fromtimestamp(info.st_ctime).strftime('%Y - % m - % d % H: % M: % S'), "</h3></body></html>")}
     #return {"path": destination_extracted_votes_csv_path, "size": round(info.st_size / 1000000, 3),
             #"last_update": datetime.fromtimestamp(info.st_ctime).strftime('%Y - % m - % d % H: % M: % S')}
+    return {
+        "path": destination_extracted_votes_csv_path,
+        "size": round(info.st_size / 1000000, 3),
+        "last_update": datetime.fromtimestamp(info.st_ctime).strftime('%Y-%m-%d %H:%M:%S')}
