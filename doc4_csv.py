@@ -1,10 +1,6 @@
-import os
-from datetime import datetime
 from urllib.request import urlretrieve
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-
-
 
 
 # telechargement de la page

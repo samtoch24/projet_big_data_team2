@@ -1,11 +1,6 @@
-import os
-from datetime import datetime
 from urllib.request import urlretrieve
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-
-
-
 
 # telechargement de la page
 url = 'https://catalog.data.gov/dataset/campaign-finance-summary-of-third-party-disclosure-forms-regarding-san-francisco-candidate-eb923'
