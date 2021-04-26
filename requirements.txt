@@ -79,3 +79,5 @@ zipp==3.4.0
 
 flask-cors-3.0.10
 datadotworld
+textract==1.6.3
+PyPDF2

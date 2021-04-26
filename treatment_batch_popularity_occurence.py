@@ -1,19 +1,16 @@
 import os
 
+import PyPDF2
 from pyspark.sql import SparkSession
 
-# Lecture du fichier
-file = 'morenam.pdf'
 
-
-def read_file(file):
-    try:
-        with open(file, 'r') as f:
-            return f.read().lower()
-    except UnicodeDecodeError:
-        print("je n'arrive pas à ouvrir le file")
-    return ""
-
+# Lecture du fichier PDF
+stream = 'file/morenam.pdf'
+try:
+    pdf_file = open(stream)
+    read_pdf = PyPDF2.PdfFileReader(pdf_file)
+except UnicodeDecodeError:
+    print("je n'arrive pas à ouvrir le file")
 
 # Chemin du fichier
 file_dir = "C:\\wamp64\\www\\projet_big_data_team2\\file"
@@ -47,12 +44,12 @@ def mapEvaluation(word):
 
 
 # Traitement batch avec spark
-CandidatWordcount = files.map(read_file).flatMap(lambda line: line.split(' ')).map(mapEvaluation).reduceByKey(
+CandidatWordcount = files.map(read_pdf).flatMap(lambda line: line.split(' ')).map(mapEvaluation).reduceByKey(
     lambda count1, count2: count1 + count2).collect()
 
 # Trie de la liste en fonction du nombre d’occurrences
 CandidatWordcount.sort(key=lambda v: -v[1])
 
-# Liste des 5 motsles plus fréquents
+# Liste des 5 mots les plus fréquents
 for i in range(5):
     print(i, CandidatWordcount[i][0], CandidatWordcount[i][1])
