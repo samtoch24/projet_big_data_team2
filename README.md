@@ -32,5 +32,14 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
  - Tendance quatidienne des votes (lindsey ey eitel)
  - popularité des candidats (morena et reinna)
 
+## Librairie supplementaire en dehors de celle de tps
+  - textract (pip install textract)
+  - data.world (pip install datadotworld) & dw configure
+  - flask_cors (pip install flask-cors-3.0.10)
+  - PyPDF2 (pip install  PyPDF2)
 
+# A Savoir : 
+- Pour installer les packages : pip install -r requirements.txt
+- Adresse du serveur de l'API : http://127.0.0.1:5000/V0.0.1/home/
+- Documentation de l'API (interface du swagger) : http://127.0.0.1:5000/V0.0.1/docs/
 
