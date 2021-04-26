@@ -32,5 +32,9 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
  - Tendance quatidienne des votes (lindsey ey eitel)
  - popularité des candidats (morena et reinna)
 
-
+## Librairie supplementaire en dehors de celle de tps
+  - textract (pip install textract)
+  - data.world (pip install datadotworld) & dw configure
+  - flask_cors (pip install flask-cors-3.0.10)
+  - PyPDF2 (pip install  PyPDF2)
 
