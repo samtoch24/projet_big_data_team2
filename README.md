@@ -38,3 +38,7 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
   - flask_cors (pip install flask-cors-3.0.10)
   - PyPDF2 (pip install  PyPDF2)
 
+# A Savoir : 
+- Pour installer les packages : pip install -r requirements.txt
+- Adresse du serveur d'accueil de l'API : http://127.0.0.1:5000/V0.0.1/home/
+
