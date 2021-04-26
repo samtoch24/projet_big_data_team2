@@ -40,5 +40,6 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
 
 # A Savoir : 
 - Pour installer les packages : pip install -r requirements.txt
-- Adresse du serveur d'accueil de l'API : http://127.0.0.1:5000/V0.0.1/home/
+- Adresse du serveur de l'API : http://127.0.0.1:5000/V0.0.1/home/
+- Documentation de l'API (interface du swagger) : http://127.0.0.1:5000/V0.0.1/docs/
 
