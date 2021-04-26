@@ -15,6 +15,6 @@ a = [elt for elt in h4.findAll('a') if 'ÉLECTIONS' in elt.getText()][0]
 link = a['href']
 
 # telechargement du fichier à partir du lien
-urlretrieve(link, 'morenam.pdf')
+urlretrieve(link, 'file/morenam.pdf')
 
 
