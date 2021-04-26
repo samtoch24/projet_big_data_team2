@@ -5,9 +5,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 
-# Destination file
-data_destination_path = "C:\\wamp64\\www\\projet_big_data_team2\\Docs coll"
-destination_extracted_occurence_word_pdf_path = os.path.join(data_destination_path, 'USA_Elections_InBrief_French.pdf')
+
 
 # telechargement de la page
 url = 'https://search.usa.gov/search?utf8=%E2%9C%93&affiliate=usagov&query=elections+pr%C3%A9sidentielles'
@@ -21,9 +19,6 @@ a = [elt for elt in h4.findAll('a') if 'ÉLECTIONS' in elt.getText()][0]
 link = a['href']
 
 # telechargement du fichier à partir du lien
-urlretrieve(link, destination_extracted_occurence_word_pdf_path)
+urlretrieve(link, 'morenam.pdf')
 
-# Display downloaded file informations
-info = os.stat(destination_extracted_occurence_word_pdf_path)
-print("size (Mo): ", round(info.st_size/1000000, 3))
-print("last_update: ", datetime.fromtimestamp(info.st_ctime))
+

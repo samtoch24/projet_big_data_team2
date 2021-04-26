@@ -1,16 +1,33 @@
-# This is a sample Python script.
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from datetime import datetime
+from urllib.request import urlretrieve
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+#Analyse de la page
+# telechargement de la page
+#
+url= 'https://catalog.data.gov/dataset/campaign-finance-summary-of-third-party-disclosure-forms-regarding-san-francisco-candidate-eb923'
+page= urlopen(url)
+soup= BeautifulSoup(page,"html.parser")
+str="Comma Separated Values File"
+a=[elt for elt in soup.findAll("a") if str in elt.getText()][0]
+li=a.find_parent('li')
+
+div = [elt for elt in li.findAll('div')][0]
+a2 =  [elt for elt in div.findAll('a') if 'Download' in elt.getText()][0]
+
+link=a2['href']
+
+urlretrieve(link,"concours.csv")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('Projet big data -Team 2')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+#p=[elt for elt in soup.findAll("p") if elt.getText().startswith('&nbsp;')][0]
+#print(p.getText())
+
+#a= [elt for elt in soup.findAll("a") if elt.get('title','Comma Separated Values File') ][0]
+#link= a['href']
+#print("lien : "+link)

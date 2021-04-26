@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\wamp64\www\projet_big_data_team2\env
+set VIRTUAL_ENV=C:\I2\projet_big_data_team2\env
 
 if not defined PROMPT set PROMPT=$P$G
 
