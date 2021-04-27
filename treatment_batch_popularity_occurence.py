@@ -1,19 +1,20 @@
 import os
-
-import PyPDF2
+import textract
+import PyPDF2 as p
 from pyspark.sql import SparkSession
-
-
-# Lecture du fichier PDF
-stream = 'file/morenam.pdf'
-try:
-    pdf_file = open(stream)
-    read_pdf = PyPDF2.PdfFileReader(pdf_file)
-except UnicodeDecodeError:
-    print("je n'arrive pas à ouvrir le file")
 
 # Chemin du fichier
 file_dir = "C:\\wamp64\\www\\projet_big_data_team2\\file"
+
+# Lecture du fichier PDF
+file = "morenam.pdf"
+pd = p.PdfFileReader(file_dir + "\\" + file)
+f = []
+texte = " "
+N = pd.getNumPages()
+for i in range(1, N):
+    f.append(pd.getPage(i))
+    texte = texte + f[i - 1].extractText()
 
 # Liste des chemins vers les fichiers
 file_list = os.listdir(file_dir)
@@ -29,7 +30,7 @@ spark = SparkSession.builder.appName("Candidate's occurences").config("spark.dri
 sc = spark.sparkContext
 
 # Parrallélisation des traitements sur l'ensemble des fichiers
-files = sc.parallelize(file_list_path)
+file_pdf = sc.parallelize(texte)
 
 # Traitement batch avec spark
 # CandidatWordcount = files.map(read_file).flatMap(lambda line: line.split(' ')).map(lambda word: (word, 1)).reduceByKey(
@@ -43,13 +44,27 @@ def mapEvaluation(word):
     return (word, int(not word in Candidats))
 
 
-# Traitement batch avec spark
-CandidatWordcount = files.map(read_pdf).flatMap(lambda line: line.split(' ')).map(mapEvaluation).reduceByKey(
+C_wordcount = file_pdf.flatMap(lambda line: line.split(' ')).map(mapEvaluation).reduceByKey(
     lambda count1, count2: count1 + count2).collect()
-
-# Trie de la liste en fonction du nombre d’occurrences
-CandidatWordcount.sort(key=lambda v: -v[1])
-
+# for (word, count) in C_wordcount:
+#     print(word, count)
 # Liste des 5 mots les plus fréquents
 for i in range(5):
-    print(i, CandidatWordcount[i][0], CandidatWordcount[i][1])
+    print(i, C_wordcount[i][0], C_wordcount[i][1])
+
+
+# # Fonction evaluation qui renvoie 0 si le nom d'un candidat apparait dans le fichier et 1 sinon
+# def mapEvaluation(word):
+#     return (word, int(not word in Candidats))
+#
+#
+# # Traitement batch avec spark
+# CandidatWordcount = file_pdf.map(texte).flatMap(lambda line: line.split(' ')).map(mapEvaluation).reduceByKey(
+#     lambda count1, count2: count1 + count2).collect()
+#
+# # Trie de la liste en fonction du nombre d’occurrences
+# CandidatWordcount.sort(key=lambda v: -v[1])
+#
+# # Liste des 5 mots les plus fréquents
+# for i in range(5):
+#     print(i, CandidatWordcount[i][0], CandidatWordcount[i][1])
