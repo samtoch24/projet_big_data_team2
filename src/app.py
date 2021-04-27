@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from src.endpoints.Popularity_candidat import popularity_candidat_endpoint
+from src.endpoints.popularity_candidat import popularity_candidat_endpoint
 from src.endpoints.popularity_latest_download import popularity_endpoint
 from src.endpoints.documentation import docs_endpoint
 from src.endpoints.position_candid import position_candidat_endpoint
