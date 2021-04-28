@@ -12,13 +12,14 @@ for i in range(1, N):
     f.append(pd.getPage(i))
     text = text + f[i-1].extractText()
 #print(text)
-if not os.path.isfile('monpdf.txt'):
-        z =open('monpdf.txt','w')
-        z.close()
-
-Fichier = open('monpdf.txt', 'w')
-Fichier.write(text)
-Fichier.close()
+print(pd.getPage(0).extractText())
+# if not os.path.isfile('monpdf.txt'):
+#         z =open('monpdf.txt','w')
+#         z.close()
+#
+# Fichier = open('monpdf.txt', 'w')
+# Fichier.write(text)
+# Fichier.close()
 
 # print(len(file2))
 #
