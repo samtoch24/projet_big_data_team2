@@ -9,8 +9,7 @@ from flask import render_template
 
 def vote_tendancy_latest_download():
     # Destination file
-    data_destination_path = "C:/wamp64/www/projet_big_data_team2/Docs coll"
-    destination_extracted_votes_csv_path = os.path.join(data_destination_path, 'presidential-primary-final-precinct-results.csv')
+    destination_extracted_votes_csv_path = os.path.join('presidential-primary-final-precinct-results.csv')
     # telechargement de la page
     url = 'https://catalog.data.gov/dataset/march-2020-presidential-primary-final-precinct-results'
     # Analyse de la page

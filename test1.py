@@ -2,7 +2,7 @@ import os
 
 import PyPDF2 as pdf
 
-file = open("C:\s1.pdf", "rb")
+#file = open("C:\s1.pdf", "rb")
 file2 = "C:\\wamp64\\www\\projet_big_data_team2\\file\\morenam.pdf"
 pd = pdf.PdfFileReader(file2)
 f = []
@@ -12,7 +12,7 @@ for i in range(1, N):
     f.append(pd.getPage(i))
     text = text + f[i-1].extractText()
 #print(text)
-print(pd.getPage(0).extractText())
+print(pd.getPage(pd.getNumPages()-1).extractText())
 # if not os.path.isfile('monpdf.txt'):
 #         z =open('monpdf.txt','w')
 #         z.close()

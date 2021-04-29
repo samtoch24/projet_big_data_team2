@@ -1,5 +1,4 @@
 import os
-import textract
 import PyPDF2 as p
 from pyspark.sql import SparkSession
 
@@ -8,13 +7,10 @@ file_dir = "C:\\wamp64\\www\\projet_big_data_team2\\file"
 
 # Lecture du fichier PDF
 file = "morenam.pdf"
-pd = p.PdfFileReader(file_dir + "\\" + file)
-f = []
+a = p.PdfFileReader(file_dir + "\\" + file)
 texte = " "
-N = pd.getNumPages()
-for i in range(1, N):
-    f.append(pd.getPage(i))
-    texte = texte + f[i - 1].extractText()
+for i in range(0, a.getNumPages()):
+    texte = texte + a.getPage(i).extractText()
 
 # Liste des chemins vers les fichiers
 file_list = os.listdir(file_dir)

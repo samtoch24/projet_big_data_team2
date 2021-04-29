@@ -4,8 +4,8 @@ info:
   version: "1.0.0"
   title: "Data analysis and electoral movements"
   contact:
-    email: "samtoche@outlook.fr"
-host: "data-analysis-electoral-movements.sourcing.com"
+    email: "team2-big-data@data.fr"
+host: "127.0.0.1:5000"
 basePath: "/v1.0.0"
 tags:
 - name: "movements_candidats"
@@ -15,7 +15,6 @@ tags:
 - name: "popularity_candidats"
   description: "This dataset contains the popularity of candidates in the media and on social networks"
 schemes:
-- "https"
 - "http"
 paths:
   /movements_candidats/position:
@@ -87,7 +86,7 @@ paths:
         - "read:candidats"
       deprecated: false
 
-  /tendancy_votes:
+  /home/daily-vote-tendancy:
     get:
       tags:
       - "tendancy_votes"

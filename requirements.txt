@@ -81,3 +81,4 @@ flask-cors-3.0.10
 datadotworld
 textract==1.6.3
 PyPDF2
+matplotlib==3.1.3

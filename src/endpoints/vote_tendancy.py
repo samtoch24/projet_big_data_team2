@@ -16,8 +16,8 @@ def docs_get():
         return json.dumps(result, indent=4)
 
 
-@vote_tendancy_endpoint.route("/csv_file/latest/download/")
-def vote_tendancy_csv_file_latest_download_get():
+@vote_tendancy_endpoint.route("/docs/#/tendancy_votes/getInventory")
+def vote_tendancy_docs_tendancy_votes_getInventory_get():
     return vote_tendancy_latest_download()
     """ télécharge le dernier fichier des données de la tendance des votes """
     # try:
@@ -28,8 +28,8 @@ def vote_tendancy_csv_file_latest_download_get():
     #     return json.dumps(result, indent=4)
 
 
-@vote_tendancy_endpoint.route("/analysis-elections/daily-vote/")
-def vote_tendancy_analysis_elections_daily_vote_get():
+@vote_tendancy_endpoint.route("/docs/#/tendancy_votes/getInventory/analysis")
+def vote_tendancy_docs_tendancy_votes_getInventory_analysis_get():
     """ analyse le fichier file_name de ma source """
     try:
         return render_template('daily_vote_trend.html')
