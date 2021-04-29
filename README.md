@@ -39,6 +39,9 @@ Votre candidat souhaite mettre en place une analyse de données pour deux object
   - PyPDF2 (pip install  PyPDF2)
   - motplotlib (pip install matplotlib==3.1.3)
 
+## Pour connaitre les librairies deja installées : 
+  - pip freeze 
+
 
 # A Savoir : 
 - Pour installer les packages : pip install -r requirements.txt
